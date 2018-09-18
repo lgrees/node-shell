@@ -5,6 +5,12 @@ process.stdout.write('prompt > ');
 process.stdin.on('data', (data) => {
   const cmd = data.toString().trim(); // remove the newLine
 
-  process.stdout.write('You typed: ' + cmd);
-  process.stdout.write('\npromot > ');
+  if (cmd === 'pwd'){
+    process.stdout.write(__dirname);
+  }
+
+  else {
+    process.stdout.write('this isnt a command');
+  }
+  process.stdout.write('\nprompt > ');
 })
